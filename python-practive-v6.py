@@ -19,7 +19,7 @@ else:
     target = today + os.sep + now  + '_' + comment.replace(' ','_') + '.zip'
 if not os.path.exists(now):
     try:
-        os.mkdir(today)
+        os.makedirs(today)
     except OSError:
         pass
     print("Successfuly created directory ",today)
