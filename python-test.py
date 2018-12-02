@@ -18,7 +18,7 @@ if len(sys.argv) < 2:
     sys.exit()
 if sys.argv[1].startswith('--'):
     option = sys.argv[1][2:]
-    if  option == 'verion':
+    if  option == 'version':
         print('Version 1.2')
     elif option == 'help':
         print(''' \
