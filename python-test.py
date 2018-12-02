@@ -26,7 +26,7 @@ if sys.argv[1].startswith('--'):
         --version: Print the version number
         --help: Display this help''')
     else:
-        print('Unknown print'):quit()
+        print('Unknown print')
 else:
     for filename in sys.argv[1:]:
         readfile(filename)
