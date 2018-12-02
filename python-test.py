@@ -11,7 +11,7 @@ def readfile(filename):
         line = f.readline()
         if len(line) == 0:
             break
-        print(line)
+        print(line,)
     f.close()
 if len(sys.argv) < 2:
     print('No action apecified')
@@ -21,11 +21,26 @@ if sys.argv[1].startswith('--'):
     if  option == 'verion':
         print('Version 1.2')
     elif option == 'help':
-        print('''This program print files to the standard output.
-            --version: Print the version number
-            --help: Display this help''')
+        print(''' \
+        This program print files to the standard output.
+        --version: Print the version number
+        --help: Display this help''')
     else:
-        print('Unknown print')
+        print('Unknown print'):quit()
 else:
     for filename in sys.argv[1:]:
         readfile(filename)
+if sys.argv[1].startswith('--'):
+    option = sys.argv[1][2:]
+    # fetch sys.argv[1] but without the first two characters
+    if option == 'version':
+        print ('Version 1.2')
+    elif option == 'help':
+        print ('''\
+       This program prints files to the standard output.
+       Any number of files can be specified.
+       Options include:
+        --version : Prints the version number
+         --help : Display this help''')
+    else:
+        print ('Unknown option.')
